@@ -1,0 +1,69 @@
+<username>/SimpleCSharpApp:
+  Env:
+    - DOTNETDIR: %windir%\Microsoft.NET\Framework\v3.5
+    - CSCEXE: %DOTNETDIR%\csc.exe
+  PkgInclude:
+    - webserver.cs
+    - release\
+  PreInstall:
+    - echo "Begin PreInstall"
+    - echo "Making release directory"
+    - if [ ! -d release ]; then mkdir -p release; fi
+
+    # #################################################
+    # # If you want to compile the code on DEPLOY     #
+    # # There are prerequisites                       #
+    # # Your destination system must have c# compiler #
+    # # Linux = mcs (mono)                            #
+    # # Windows = csc                                 #
+    # #                                               #
+    # # Otherwise you MUST compile BEFORE deploy      #
+    # # To compile BEFORE deploy, run                 #
+    # # the correct file for your OS (below)          #
+    # # * build_linux.sh for Linux                    #
+    # # * build_windows.bat for Windows               #
+    # #################################################
+   
+    # If you are compiling on deploy
+    # and deploying to Ubuntu
+    # and may need to install mono-mcs
+    # Unremark the following 2 lines
+    #- sudo apt-get -y update
+    #- sudo apt-get -y install mono-mcs
+
+    # If you are compiling on deploy
+    # and deploying to 'Linux mono'?
+    # Unremark the following to compile
+    #- mcs webserver.cs -out:release/webserver.exe
+
+    # If you are compiling on deploy
+    # and deploying to Windows?
+    # Unremark the following to compile
+    #- %CSCEXE% webserver.cs -out:release\webserver.exe
+   
+    # ##################################################
+    # # End of compile code on deploy section          #
+    # ##################################################
+
+    # ##################################################
+    # # Deploying TO Ubuntu Linux                      #
+    # # and need to Install mono runtime?              #
+    # #                                                #
+    # # Unremark the following 2 lines                 #
+    # ##################################################
+    #- sudo apt-get -y update
+    #- sudo apt-get -y install mono-runtime
+    
+    - echo "End PreInstall"
+
+  Exec:
+    - echo "Begin Exec"
+
+    # Deploying to 'Linux mono'?
+    # Unremark the following
+    #- mono release/webserver.exe'
+
+    # Deploying to Windows?
+    # Unremark the following
+    #- release\webserver.exe
+
