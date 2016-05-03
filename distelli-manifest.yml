@@ -1,14 +1,14 @@
 bmcgehee/SimpleCSharpApp:
 
   Env:
-    - DOTNETDIR: %windir%\Microsoft.NET\Framework\v4.0.30319
-    - CSCEXE: %DOTNETDIR%\csc.exe
-    - PORT: "8080"
+    - 'DOTNETDIR: %windir%\Microsoft.NET\Framework\v4.0.30319'
+    - 'CSCEXE: %DOTNETDIR%\csc.exe'
+    - 'PORT: "8080"'
 
   Build:
-    - set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"
+    - 'set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"'
     - mkdir release
-    - %DOTNETDIR%\csc.exe webserver.cs -out:release/webserver.exe
+    - '%DOTNETDIR%\csc.exe webserver.cs -out:release/webserver.exe'
 
   PkgInclude:
     - release\webserver.exe
