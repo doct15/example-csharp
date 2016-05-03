@@ -3,6 +3,7 @@ bmcgehee/SimpleCSharpApp:
   Env:
     - DOTNETDIR: %windir%\Microsoft.NET\Framework\v4.0.30319
     - CSCEXE: %DOTNETDIR%\csc.exe
+    - PORT: "8080"
 
   Build:
     - set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"
@@ -14,11 +15,12 @@ bmcgehee/SimpleCSharpApp:
     
   PreInstall:
     - echo "Begin PreInstall"
-    #- echo "Making release directory"
-    #- if [ ! -d release ]; then mkdir -p release; fi
-    #- echo "End PreInstall"
+
+  PostInstall:
+    - netsh advfirewall firewall add rule name="TCP Port %PORT%" dir=in action=allow protocol=TCP localport=%PORT%
+    - netsh advfirewall firewall delete rule name="TCP Port %PORT%"
+    - netsh advfirewall firewall add rule name="TCP Port %PORT%" dir=in action=allow protocol=TCP localport=%PORT%
 
   Exec:
-    #- echo "Begin Exec"
     - release\webserver.exe
 
