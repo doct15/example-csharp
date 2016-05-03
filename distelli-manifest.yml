@@ -1,4 +1,4 @@
-bmcgehee/SimpleCSharpApp:
+bmcgehee/example-csharp:
 
   Env:
     - 'DOTNETDIR: %windir%\Microsoft.NET\Framework\v4.0.30319'
@@ -7,7 +7,7 @@ bmcgehee/SimpleCSharpApp:
 
   Build:
     - 'set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"'
-    - mkdir release
+    - mkdir -p release
     - '%DOTNETDIR%\csc.exe webserver.cs -out:release/webserver.exe'
 
   PkgInclude:
