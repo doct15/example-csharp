@@ -8,7 +8,7 @@ bmcgehee/example-csharp:
   Build:
     - 'set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"'
     - mkdir -p release
-    - '%DOTNETDIR%\csc.exe webserver.cs /out:release/webserver.exe'
+    - '%DOTNETDIR%\csc.exe  /out:release/webserver.exe webserver.cs'
 
   PkgInclude:
     - release\webserver.exe
