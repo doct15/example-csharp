@@ -8,7 +8,7 @@
   PreInstall:
     - echo "Begin PreInstall"
     - echo "Making release directory"
-    - if [ ! -d release ]; then mkdir -p release; fi
+    - if [ ! -d release ]; then mkdir -p release; fi  
 
     # #################################################
     # # If you want to compile the code on DEPLOY     #
