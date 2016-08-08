@@ -3,7 +3,7 @@ bmcgehee/example-csharp:
   Env:
     - 'DOTNETDIR: "%windir%\Microsoft.NET\Framework\v4.0.30319"'
     - 'CSCEXE: "%DOTNETDIR%\csc.exe"'
-    - PORT: "8080"
+    - 'PORT: "8080"'
 
   Build:
     - 'set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"'
