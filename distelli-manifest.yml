@@ -8,6 +8,7 @@ bmcgehee/example-csharp:
   Build:
     - echo "test"
     - 'set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"'
+    - echo "%DOTNETDIR%"
     - mkdir -p release
     - '%DOTNETDIR%\csc.exe  /out:release/webserver.exe webserver.cs'
 
