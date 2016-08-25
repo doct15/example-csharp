@@ -7,6 +7,7 @@ bmcgehee/example-csharp:
 
   Build:
     - echo "test"
+    - echo "%windir%"
     - 'set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"'
     - echo "%DOTNETDIR%"
     - mkdir -p release
