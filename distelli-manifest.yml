@@ -6,11 +6,8 @@ bmcgehee/example-csharp:
     - 'PORT: "8080"'
 
   Build:
-    - echo "test"
-    - echo "test2"
-    - echo "%windir%"
     - 'set DOTNETDIR=%windir%\Microsoft.NET\Framework\v4.0.30319'
-    - echo "%DOTNETDIR%"
+    - echo "DOTNETDIR is %DOTNETDIR%"
     - echo "about to make release dir"
     - mkdir -p release
     - echo "done making dir"
