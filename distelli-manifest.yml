@@ -16,6 +16,7 @@ bmcgehee/example-csharp:
     - echo "done making dir"
     - echo "about to build"
     - '%DOTNETDIR%\csc.exe  /out:release/webserver.exe webserver.cs'
+    - dir release
     - echo "done building"
 
   PkgInclude:
