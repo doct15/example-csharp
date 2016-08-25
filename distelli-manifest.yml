@@ -6,6 +6,7 @@ bmcgehee/example-csharp:
     - 'PORT: "8080"'
 
   Build:
+    - echo "test"
     - 'set DOTNETDIR="%windir%\Microsoft.NET\Framework\v4.0.30319"'
     - mkdir -p release
     - '%DOTNETDIR%\csc.exe  /out:release/webserver.exe webserver.cs'
