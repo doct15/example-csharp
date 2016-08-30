@@ -53,7 +53,7 @@ namespace SimpleWebServer
        public void ProcessRequest()
        {
           StringBuilder sb = new StringBuilder();
-          sb.Append("<html><title>Distelli CI/CD with Windows and C#</title><body><h1>Hello World from Distelli.</h1><br><p>Build, test, and deploy your Windows apps with Distelli.</p></body></html>");
+          sb.Append("<html><title>Distelli CI/CD with Windows and C#</title><body><h1>Hello World 8/30 from Distelli.</h1><br><p>Build, test, and deploy your Windows apps with Distelli.</p></body></html>");
  
           byte[] b = Encoding.UTF8.GetBytes(sb.ToString());
           context.Response.ContentLength64 = b.Length;
